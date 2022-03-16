@@ -7,6 +7,84 @@ import Product from './Components/Product';
 
 class App extends Component {
 render(){
+  const items =[
+    {
+      name: "Iphone",
+      price: 1000000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "samsung",
+      price: 154588000,
+      dsc: "Ram 12GB",
+      free: true
+    },
+    {
+      name: "Nokia",
+      price: 25000000,
+      dsc: "cứng như cục gạch",
+      free: true
+    },
+    {
+      name: "Iphone",
+      price: 6650000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "HTC",
+      price: 19990000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "Iphone",
+      price: 15000000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "HTC",
+      price: 19990000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "Iphone",
+      price: 15000000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "HTC",
+      price: 19990000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "Iphone",
+      price: 15000000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "HTC",
+      price: 19990000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+    {
+      name: "Iphone",
+      price: 15000000,
+      dsc: "Màn hình 120Hz",
+      free: true
+    },
+   
+  ]
+  const isCheck = items.map((item, index) => 
+  <Product key= {index} name={item.name} price={item.price} dsc={item.dsc} free={item.free} ></Product>
+ )
   return (
     <div>
       <Header/>
@@ -39,7 +117,10 @@ render(){
             </ul>
         </div>
       </div>
-      <Product/>
+      <div className='products'>
+        {isCheck}
+      </div>
+      
     </div>
   );
   }
