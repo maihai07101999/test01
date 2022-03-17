@@ -4,7 +4,7 @@ import Control from './Components/Control';
 import Table from './Components/Table';
 import List from './Components/List';
 import items from './Mock/tacks';
-import _ from 'lodash';
+import _, { remove } from 'lodash';
 
 class App extends Component {
   constructor(props){
@@ -13,12 +13,22 @@ class App extends Component {
       items : items,
       ishowTable: false,
       strSearch: '',
-      oderBy: 'name',
-      orderDir: 'asc'
+      oderBy: '',
+      orderDir: ''
     };
     this.handleToggleForm =this.handleToggleForm.bind(this);
     this.handleCancel= this.handleCancel.bind(this);
     this.handleSearchGo = this.handleSearchGo.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+  handleDelete(id){
+   let items = this.state.items;
+   remove(items, (item)=>{
+     return item.id === id;
+   });
+   this.setState({
+      items : items
+   });
   }
   handleToggleForm(){
     this.setState({
@@ -76,7 +86,9 @@ class App extends Component {
        ishowTable={ishowTable}
        handleSearchGo={this.handleSearchGo}/>
        {elmTable}
-       <List items={items}/>
+       <List
+        handleDeleteBo={this.handleDelete}
+        items={items}/>
         </div>
   );
   }

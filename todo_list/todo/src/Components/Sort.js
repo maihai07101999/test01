@@ -10,12 +10,13 @@ class Sort extends Component {
    
   }
   handleSort(orderBy, orderDir) {
-    console.log("");
+    console.log(orderBy + " " + orderDir);
+    console.log("hello");
   }
   render(){
     let orderBy = this.props.orderBy;
     let orderDir =this.props.orderDir;
-   console.log(orderBy+" "+orderDir)
+    let strSort = orderBy + " " + orderDir;
   return (
     <div>
        
@@ -24,12 +25,13 @@ class Sort extends Component {
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
           <select name="ds" id="inputDs" className="form-control" required="required" ref="task_level">
           Sort by
-                  <option value={1}>Name ASC</option>
-                  <option value={2}>Name DESC</option>
-                  <option value={1}>Level ASC</option>
-                  <option value={2}>Level DESC</option>
+                  <option onClick={()=>this.handleSort('name', 'asc')} >Name ASC</option>
+                  <option  onClick={()=>this.handleSort('name', 'desc')} >Name DESC</option>
+                  <option   onClick={()=>this.handleSort('level', 'asc')} >Level ASC</option>
+                  <option  onClick={()=>this.handleSort('level', 'desc')} >Level DESC</option>
        </select>
-			</div>
+       <span className="btn btn-primary">{strSort}</span>
+     </div>
           {/* SORT : END */}
     </div>
  

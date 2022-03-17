@@ -1,6 +1,14 @@
 import {Component} from 'react';
 import '../App.css';
 class List extends Component {
+  constructor(props){
+    super(props);
+    this.state ={};
+
+  }
+  handleDelete(id){
+    this.props.handleDeleteBo(id)
+  }
   render(){
     const items =this.props.items;
     const elm = items.map((item, index) =>{
@@ -18,7 +26,7 @@ class List extends Component {
           <td class="text-center">{elmLever}</td>
           <td>
               <button type="button" class="btn btn-warning">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" onClick={()=> this.handleDelete(item.id)} class="btn btn-danger">Delete</button>
           </td>		
         </tr>
      );
