@@ -12,7 +12,9 @@ class App extends Component {
     this.state = {
       items : items,
       ishowTable: false,
-      strSearch: ''
+      strSearch: '',
+      oderBy: 'name',
+      orderDir: 'asc'
     };
     this.handleToggleForm =this.handleToggleForm.bind(this);
     this.handleCancel= this.handleCancel.bind(this);
@@ -40,6 +42,9 @@ class App extends Component {
   let ishowTable = this.state.ishowTable;
   let elmTable =  null;
   let Search = this.state.strSearch;
+  let orderBy = this.state.oderBy;
+  let orderDir = this.state.orderDir;
+  console.log(orderBy + " "+orderDir)
   if(ishowTable){
     elmTable = <Table onclickCancle={this.handleCancel} />;
   }
@@ -65,7 +70,9 @@ class App extends Component {
           <h1>Project 01 - ToDo List <small>ReactJS</small></h1>
         </div>
         {/* TITLE : END */}
-       <Control onClickAdd ={this.handleToggleForm}
+       <Control 
+       orderBy={orderBy} orderDir={orderDir}
+       onClickAdd ={this.handleToggleForm}
        ishowTable={ishowTable}
        handleSearchGo={this.handleSearchGo}/>
        {elmTable}

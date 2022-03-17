@@ -17,6 +17,8 @@ class Control extends Component {
    
   }
   render(){
+    let orderBy= this.props.orderBy;
+    let orderDir = this.props.orderDir;
     let elmTable = <button type="button" onClick={this.clickAdd}  class="btn btn-info btn-block">add Task</button>
     if(this.props.ishowTable === true)
     {
@@ -31,13 +33,12 @@ class Control extends Component {
          <Search handleGo={this.props.handleSearchGo}/>
           {/* SEARCH : END */}
           {/* SORT : START */}
-            <Sort/>
+          <Sort orderBy={orderBy} orderDir={orderDir}/>
           {/* SORT : END */}
           {/* ADD : START */}
-          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+          
          
           {elmTable}
-		  </div>
         {/* CONTROL (SEARCH + SORT + ADD) : END */}
       
         </div>

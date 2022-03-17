@@ -39,7 +39,6 @@ class List extends Component {
             </thead>
             <tbody>
              {elm}
-              
             </tbody>
 
           </table>
