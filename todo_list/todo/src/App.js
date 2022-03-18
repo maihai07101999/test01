@@ -16,14 +16,15 @@ class App extends Component {
       ishowTable: false,
       strSearch: '',
       oderBy: '',
-      orderDir: ''
+      orderDir: '',
+      itemSelect : null
     };
     this.handleToggleForm =this.handleToggleForm.bind(this);
     this.handleCancel= this.handleCancel.bind(this);
     this.handleSearchGo = this.handleSearchGo.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleEdit = this.handleEdit.bind(this);
    
 
   }
@@ -38,13 +39,26 @@ class App extends Component {
   }
   handleSubmit(item){
     let {items} = this.state;
-    items.push({
+    if(item.id !== '')
+    {
+      items.forEach((elm,key) =>{
+        if(elm.id === item.id){
+          items[key].name = item.name;
+          items[key].level = +item.level;
+        }
+      })
+    }
+    else 
+    {
+      items.push({
       id : uuidv4(),
-      task: item.name,
-      lever: +item.level
+      name: item.name,
+      level: +item.level
     })
-    this.setState({
-      items: items
+    }
+   
+     this.setState({
+      items: items,
     })
   }
   handleToggleForm(){
@@ -56,6 +70,13 @@ class App extends Component {
     this.setState({
       ishowTable: false 
     });
+  }
+  handleEdit(item){
+    console.log(item);
+    this.setState({
+      itemSelect: item,
+      ishowTable: true
+    })
   }
   handleSearchGo(value){
     this.setState({
@@ -71,9 +92,10 @@ class App extends Component {
   let Search = this.state.strSearch;
   let orderBy = this.state.oderBy;
   let orderDir = this.state.orderDir;
-  console.log(orderBy + " "+orderDir)
+  let itemSelect = this.state.itemSelect
   if(ishowTable){
     elmTable = <Table 
+    itemSelect = {itemSelect}
     handleSubmitN= {this.handleSubmit}
     onclickCancle={this.handleCancel} />;
   }
@@ -89,7 +111,7 @@ class App extends Component {
   //   items = itemsOrigin;
   // }
     items = _.filter(itemsOrigin, (item) =>{
-      return _.includes(item.task, Search);
+      return _.includes(item.name, Search);
     });
   return (
     <div className="App">
@@ -106,6 +128,7 @@ class App extends Component {
        handleSearchGo={this.handleSearchGo}/>
        {elmTable}
        <List
+       handleEditl={this.handleEdit}
         handleDeleteBo={this.handleDelete}
         items={items}/>
         </div>

@@ -4,28 +4,33 @@ class List extends Component {
   constructor(props){
     super(props);
     this.state ={};
-
+    this.handleEdit = this.handleEdit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
   handleDelete(id){
     this.props.handleDeleteBo(id)
   }
+  handleEdit(item){
+    this.props.handleEditl(item)
+  }
   render(){
+    
     const items =this.props.items;
     const elm = items.map((item, index) =>{
       let elmLever = <span class="label label-default">small</span>;
-      if(item.lever === 1){
+      if(item.level === 1){
         elmLever = <span class="label label-danger">medium</span>;
       }
-      else if(item.lever === 2){
+      else if(item.level === 2){
         elmLever = <span class="label label-info">high</span>;
       } 
      return (  
         <tr>
           <td class="text-center">{index}</td>
-          <td>{item.task}</td>
+          <td>{item.name}</td>
           <td class="text-center">{elmLever}</td>
           <td>
-              <button type="button" class="btn btn-warning">Edit</button>
+              <button type="button" onClick={()=> this.handleEdit(item)} class="btn btn-warning">Edit</button>
               <button type="button" onClick={()=> this.handleDelete(item.id)} class="btn btn-danger">Delete</button>
           </td>		
         </tr>

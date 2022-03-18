@@ -4,12 +4,14 @@ class Table extends Component {
   constructor(props){
     super(props);
      this.state={
+       task_id: '',
        task_name: '',
        task_level: 0
      };
      this.cancelTable= this.cancelTable.bind(this);
      this.handleChange= this.handleChange.bind(this);
      this.handleSubmit= this.handleSubmit.bind(this);
+    
 
   }
   cancelTable(){
@@ -24,7 +26,9 @@ class Table extends Component {
     });
   }
   handleSubmit(event){
+
     let item = {
+      id: this.state.task_id,
       name:   this.state.task_name,
       level: this.state.task_level
     }
@@ -32,9 +36,21 @@ class Table extends Component {
     event.preventDefault();
 
   }
-  render(){
+  componentWillMount(){
+    let item = this.props.itemSelect;
+    if(item.id !== ''){
+      this.setState({
+        task_id: item.id,
+        task_name: item.name,
+        task_level: item.level
+      });
+    }
     
+  }
+  render(){
+  
   return (
+
     <div >
        
      
@@ -42,7 +58,7 @@ class Table extends Component {
        
         <div className="row">
           <div className="col-md-offset-7 col-md-5">
-            <form onClick={this.handleSubmit} action method="POST" className="form-inline bt">
+            <form onSubmit={this.handleSubmit} action method="POST" className="form-inline bt">
               <div className="form-group ll ">            
                 <input name="task_name" value={this.state.task_name} onChange={this.handleChange} type="text" className="form-control "/>
               </div>
@@ -55,7 +71,7 @@ class Table extends Component {
                 </select>
                 </div>
                 <div className="form-group ll">            
-                <button type="button" onclickCancle={this.handleSubmit} className="btn btn-primary lll">Submit</button>
+                <button type="submit" onclickCancle={this.handleSubmit} className="btn btn-primary lll">Submit</button>
                 <button type="button" onClick={this.cancelTable} className="btn btn-default lll">Cancel</button>
               
                 
