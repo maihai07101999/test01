@@ -6,6 +6,8 @@ import List from './Components/List';
 import items from './Mock/tacks';
 import _, { remove } from 'lodash';
 
+const { v4: uuidv4 } = require('uuid');
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -20,6 +22,10 @@ class App extends Component {
     this.handleCancel= this.handleCancel.bind(this);
     this.handleSearchGo = this.handleSearchGo.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+   
+
   }
   handleDelete(id){
    let items = this.state.items;
@@ -29,6 +35,17 @@ class App extends Component {
    this.setState({
       items : items
    });
+  }
+  handleSubmit(item){
+    let {items} = this.state;
+    items.push({
+      id : uuidv4(),
+      task: item.name,
+      lever: +item.level
+    })
+    this.setState({
+      items: items
+    })
   }
   handleToggleForm(){
     this.setState({
@@ -56,7 +73,9 @@ class App extends Component {
   let orderDir = this.state.orderDir;
   console.log(orderBy + " "+orderDir)
   if(ishowTable){
-    elmTable = <Table onclickCancle={this.handleCancel} />;
+    elmTable = <Table 
+    handleSubmitN= {this.handleSubmit}
+    onclickCancle={this.handleCancel} />;
   }
   // if(Search.length > 0)
   // {

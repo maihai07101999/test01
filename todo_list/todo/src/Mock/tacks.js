@@ -13,8 +13,8 @@ let items = [
         },
         {
             id: uuidv4(),
-        task: "he he he",
-        lever: 2
+            task: "he he he",
+            lever: 2
         }
     ];
 export default items;
