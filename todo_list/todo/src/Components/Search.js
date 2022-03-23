@@ -4,7 +4,7 @@ class Search extends Component {
   constructor(props){
     super(props);
     this.state={
-      strSearch: ''
+      strSearch: 'hello'
     };
     this.handleSearch= this.handleSearch.bind(this);
     this.handleChange=this.handleChange.bind(this);
@@ -14,7 +14,8 @@ class Search extends Component {
     this.setState({
       strSearch: ''
     });
-    this.props.handleGo('')
+    this.props.handleGo('hello')
+    
   }
   handleSearch(){
     this.props.handleGo(this.state.strSearch)

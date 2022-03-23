@@ -15,6 +15,7 @@ class Control extends Component {
   clickAdd(){
     this.props.onClickAdd();
    
+   
   }
   render(){
     let orderBy= this.props.orderBy;

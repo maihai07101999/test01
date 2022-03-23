@@ -11,7 +11,6 @@ class Sort extends Component {
   }
   handleSort(orderBy, orderDir) {
     console.log(orderBy + " " + orderDir);
-    console.log("hello");
   }
   render(){
     let orderBy = this.props.orderBy;

@@ -28,17 +28,18 @@ class Table extends Component {
   handleSubmit(event){
 
     let item = {
-      id: this.state.task_id,
+      id:     this.state.task_id,
       name:   this.state.task_name,
-      level: this.state.task_level
+      level:  this.state.task_level
     }
     this.props.handleSubmitN(item)
     event.preventDefault();
 
   }
+  
   componentWillMount(){
     let item = this.props.itemSelect;
-    if(item.id !== ''){
+    if(item !== null){
       this.setState({
         task_id: item.id,
         task_name: item.name,
@@ -46,6 +47,17 @@ class Table extends Component {
       });
     }
     
+  }
+  componentWillReceiveProps(nextProps){
+
+    let item = nextProps.itemSelect;
+    if(nextProps !== null){
+      this.setState({
+        task_id: item.id,
+        task_name: item.name,
+        task_level: item.level
+      });
+    }
   }
   render(){
   

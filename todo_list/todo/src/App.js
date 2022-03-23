@@ -3,16 +3,14 @@ import {Component} from 'react';
 import Control from './Components/Control';
 import Table from './Components/Table';
 import List from './Components/List';
-import items from './Mock/tacks';
-import _, { remove } from 'lodash';
-
+// import task from './Mock/tacks'
+import  { filter, includes, orderBy as remove, reject } from 'lodash';
 const { v4: uuidv4 } = require('uuid');
-
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      items : items,
+      items : [],
       ishowTable: false,
       strSearch: '',
       oderBy: '',
@@ -30,40 +28,42 @@ class App extends Component {
   }
   handleDelete(id){
    let items = this.state.items;
+
    remove(items, (item)=>{
      return item.id === id;
    });
    this.setState({
       items : items
    });
+    localStorage.setItem('task', JSON.stringify(items));
   }
   handleSubmit(item){
     let {items} = this.state;
+    let id = null;
     if(item.id !== '')
     {
-      items.forEach((elm,key) =>{
-        if(elm.id === item.id){
-          items[key].name = item.name;
-          items[key].level = +item.level;
-        }
-      })
+      items = reject(items, { id : item.id});
+        id= item.id;
     }
-    else 
+    else
     {
-      items.push({
-      id : uuidv4(),
+      id = uuidv4();
+    }
+    items.push({
+      id : id,
       name: item.name,
       level: +item.level
     })
-    }
-   
      this.setState({
       items: items,
-    })
+      ishowTable: false
+    });
+    localStorage.setItem('task', JSON.stringify(items));
   }
   handleToggleForm(){
     this.setState({
-      ishowTable: !this.state.ishowTable  
+      ishowTable: true,
+      itemSelect: null
     });
   }
   handleCancel(){
@@ -72,10 +72,9 @@ class App extends Component {
     });
   }
   handleEdit(item){
-    console.log(item);
     this.setState({
-      itemSelect: item,
-      ishowTable: true
+      itemSelect: item, // itemselect cos theer thay đổi khi click vào các item khác nhau.
+      ishowTable: true  
     })
   }
   handleSearchGo(value){
@@ -83,7 +82,12 @@ class App extends Component {
       strSearch: value
     });
   }
-
+  componentWillMount(){
+     let items = JSON.parse(localStorage.getItem('task'));
+    this.setState({
+      items: items,
+    });
+  }
   render(){
   let itemsOrigin = [...this.state.items];
   let items = [];
@@ -92,7 +96,7 @@ class App extends Component {
   let Search = this.state.strSearch;
   let orderBy = this.state.oderBy;
   let orderDir = this.state.orderDir;
-  let itemSelect = this.state.itemSelect
+  let itemSelect = this.state.itemSelect;
   if(ishowTable){
     elmTable = <Table 
     itemSelect = {itemSelect}
@@ -110,8 +114,8 @@ class App extends Component {
   // else{ 
   //   items = itemsOrigin;
   // }
-    items = _.filter(itemsOrigin, (item) =>{
-      return _.includes(item.name, Search);
+    items = filter(itemsOrigin, (item) =>{
+      return includes(item.name, Search);
     });
   return (
     <div className="App">
