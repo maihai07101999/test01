@@ -1,13 +1,672 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /*start product 2*/
+  .listName{
+    width: 100%;
+    height: 45px;
+   
+  }
+  .listName ul{
+    padding: 0;
+  }
+  .listName ul li{
+    list-style: none;
+    padding-right: 20px;
+    font-size: 14px;
+  }
+   ul li.listTd{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid crimson;
+    transform: translateY(-5px);
+  }
+  .content{
+    width: 98%;
+    height: 180px;
+   border-bottom:  1px solid rgba(51, 51, 51, 0.384);
+  }
+  .contLeft{
+    width: 68%;
+    height: 93%;
+    float: left;
+    margin: 0% 1% 1% 0%;
+    border-right: 1px solid rgba(51, 51, 51, 0.384);
+  }
+  .contLeft img{
+    width: 53%;
+    height: 90%;
+    padding: 5px;
+    float: left;
+    margin-right: 10px;
+  }
+  .contLeft h4{
+    font-size: 16px;
+    padding: 5px 5px;
+  }
+  .contLeft p{
+    font-size: 13px;
+    padding: 5px 5px;
+  }
+  .contRight{
+    width: 30%;
+    height: 100%;
+    float: left;
+  }
+  .contRight h4{
+    font-size: 16px;
+    padding: 5px 5px;
+  }
+  .contRight p{
+    font-size: 13px;
+    padding: 5px 5px;
+  }
+  .contBottom{
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.568); ;
+  
+  }
+  .contBottom ul li{
+    list-style-type:disc;
+    width: 30%;
+    margin-right: 3%;
+  }
+  .contBottom ul li h4{
+    float: left;
+    font-size: 17px;
+  }
+  /*end product 2*/
+  /* product.js start*/
+  .pt{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+  
+  }
+  .productRight{
+    position: relative;
+    width: 56%;
+    height: auto;
+    float: left;
+  }
+  .productLeft{
+    position: relative;
+    width: 38.5%;
+    height: auto;
+    padding-left: 40px;
+    float: left;
+  }
+  .new{
+    width: 100%;
+    height: 175px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.466);
+    margin-top: 8px;
+   
+  }
+  .new img{
+    width: 38%;
+    padding-left: 5px;
+    float: left;
+  }
+  .new h4{
+    font-size: 18px;
+    padding: 5px;
+  }
+  .new p{
+    width: 62%;
+    font-size: 14px;
+    padding: 0 10px 3px 10px;
+    float: left;
+  }
+  
+  
+  /* end product.js*/
+  ul{
+   padding-left: 4%;
+  }
+  .ct{
+    position: relative;
+    width: 80%;
+    height: 550px ;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.411);
+  }
+  .rt{
+    position: relative;
+    width: 70%;
+    height: 550px;
+    float: left;
+  }
+  
+  .lt img{
+    width: 90%;
+    height: 93%;
+    padding-left: 6%;
+  }
+  .lt{
+    float: left;
+    width: 30%;
+    height: 550px;
+  }
+  .news{
+    width: 100%;
+    height: 300px;
+    background-color: rgba(221, 220, 224, 0.568);
+    overflow: hidden;
+  }
+  .news img{
+    width: 65%;
+    height: 100%;
+    float: left;
+  }
+  .news h3{
+    width: 35%;
+    padding: 10px 25px 10px 15px;
+    font-size: 20px;
+    float: left;
+  }
+  .newsMin{
+    width: 65%;
+    height: 250px;
+    overflow: hidden;
+    float: left;
+  }
+  .gocnhin{
+    width: 35%;
+    height: 250px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+  }
+  .gocnhin h4{
+    font-size: 18px;
+    padding: 8px;
+  }
+  .gocnhin a{
+    text-decoration: none;
+    color:rgb(136, 24, 24);
+    padding: 8px;
+  }
+  .gocnhin p{
+    font-size: 13px;
+    padding: 0 8px 8px 8px;
+  }
+  .sMin{
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .sMin p{
+    font-size: 14px;
+    padding: 5px;
+  
+  }
+  .sMin h4{
+    font-size: 18px;
+    padding: 5px;
+  }
+  .news p{
+    float: left;
+    padding: 1px 25px 0px 15px;
+    font-size: 13px;
+    width: 35%;
+  }
+  
+  .news small{
+    padding: 1px 25px 0px 15px;
+    float: left;
+  }
+  
+  ul li{
+   float: left;
+   list-style: none;
+   padding: 3px 6px
+  }
+  ul li:hover ul{
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+  .home{
+    opacity: o;
+    visibility: hidden;
+  }
+  ul .menuMin{
+    width: auto;
+    background-color: #fff;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    padding : 0;
+    opacity: 0;
+    visibility: hidden;
+    float:none;
+    transition: 0.4s;
+    border-top: 1px solid rgb(136, 24, 24);
+    padding: 5px 10px;
+    transform: translateY(40px);
+    box-shadow: 0 2px 8px rgb(0 0 0 /10%);
+  }
+  .menuMin li{
+    float: none;
+  }
+  
+  
+  .con{
+    height: 50px;
+    padding-top: 8px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.13);
+    border-top: 1px solid  rgba(51, 51, 51, 0.13);
+    margin-bottom: 10px;
+  }
+  .form{
+    margin: 10px 1px 6px 6px;
+    border-radius: 15px;
+    padding: 3px 0 3px 8px;
+    width: 10%;
+    border:1px solid rgb(235, 239, 243);
+  }
+  .logo{
+    float: left;
+    margin: 7px 30px 5px 25px;
+  }
+  .time{
+    float: left;
+    margin: 6px 26% 5px 5px;
+    
+  }
+  .bt{
+    border: 1px solid rgb(236, 232, 232);
+    padding: 3px 6px;
+    margin: 6px;
+    display: inline;
+    border-radius: 3px;
+  }
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  .container .appjs{
+    position: relative;
+    height: 1000px;
+  }
+  .appjs .chude{
+    position: absolute;
+    top: 2480px;
+    background-color: #fff;
+    width: 75%;
+    margin-left: 5%;
+    height: 40px;
+    padding-top: 5px;
+    
+    border-bottom: 1px solid rgba(51, 51, 51, 0.582);
+    border-top: 1px solid  rgba(51, 51, 51, 0.548);
+  }
+  .chude ul{
+    padding-left: 0px;
+  }
+  .chude ul li{
+    list-style: none;
+    padding-right: 20px;
+    float: left;
+  }
+  .chude ul li a{
+    float: left;
+  }
+  .appjs .vid{
+    position: absolute;
+    top: 50px;
+    background-color: rgb(243, 232, 232);
+    width:  100%;
+    height: 540px;
+    padding-top: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgb(0 0 0 /10%);
+    
+  }
+  
+  .viTo{
+    width: 60%;
+    height: 80%;
+    float: left;
+    position: absolute;
+    left: 3%;
+    top: 63px;
+  }
+  .viTo img{
+    width: 100%;
+  
+  }
+  .viTo h4{
+    padding: 10px 10px 10px 0;
+  }
+  .chude1 ul{
+    padding-left: 10px;
+  }
+  .chude1 ul li{
+    list-style: none;
+    margin-right: 15px;
+    float: left;
+  }
+  .chude1 ul li a{
+    float: left;
+    font-size: 13px;
+  }
+  .viList{
+    width: 35%;
+    height: 85%;
+    left: 65%;
+    top: 10%;
+    overflow: scroll;
+    position: absolute;
+    float: left;
+  }
+  .viMin{
+    width: 95%;
+    height: 22%;
+    margin: 1%;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.582);
+    overflow: hidden;
+  }
+  .viMin img{
+    width: 38%;
+    padding:2%;
+    float: left;
+  }
+  .viMin h5{
+    float: left;
+    padding: 10px 5px 10px 5px;
+    font-size: 16px;
+  }
+  .viMin small{
+    float: left;
+    font-size: 13px;
+    padding: 3px 5px 10px 5px;
+  }
+  /*postscard start*/
+  .ptd{
+    position: absolute;
+    top: 620px;
+    border-top: 1px solid rgba(51, 51, 51, 0.582);
+    width: 100%;
+    height: 230px;
+    padding: 8px;
+    overflow: hidden;
+    
+  }
+  .ptd h4{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid crimson;
+    width: 80px;
+  }
+  .pMin{
+    width: 30%;
+    height: 80%;
+    margin-right: 3%;
+    float: left;
+    border-right: 1px solid #333;
+  }
+  .pMin h5{
+    font-size: 18px;
+    width: 65%;
+    float: left;
+  }
+  .pMin p{
+    font-size: 14px;
+    width: 65%;
+    float: left;
+  }
+  .pMin img{
+    width: 30%;
+    border-radius: 14px;
+  }
+  /*postscard end*/
+  /*Product3 start*/
+  .p3{
+    position: absolute;
+    top: 850px;
+    border-top: 1px solid rgba(51, 51, 51, 0.582);
+    width: 100%;
+    height: 500px;
+    padding: 8px;
+    overflow: hidden;
+  }
+  .p3 .prMin{
+    width: 33%;
+    height: 100%;
+    float: left;
+  }
+  .prMin .prTd{
+    width: 100%;
+    height: 10%;
+  }
+  .prTd ul li{
+    font-size: 14px;
+  }
+  .prTd ul li h5{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid crimson;
+    width: 80px;
+  }
+  .prTop{
+    width: 98%;
+    height: 65%;
+    overflow: hidden;
+    border-bottom:1px solid rgba(51, 51, 51, 0.582);;
+  }
+  .prTop img{
+    width: 90%;
+    padding: 5px 5px 5px 5px;
+  }
+  .prTop h4{
+    padding: 5px 20px 0px 5px;
+    font-size: 18px;
+  }
+  .prTop p{
+    padding: 0px 25px 5px 5px;
+    font-size: 14px;
+  }
+  .prBottom h4{
+    padding: 10px 2px 0px 5px;
+    font-size: 18px;
+  }
+  .prBottom p{
+    padding: 0px 25px 5px 5px;
+    font-size: 14px;
+  }
+  .prBottom{
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
+  }
+  /*Product3 end*/
+  /*Start bottom*/
+  .bottom{
+    position: absolute;
+    top: 1380px;
+    border-top: 1px solid rgba(51, 51, 51, 0.582);
+    width: 100%;
+    height: 450px;
+    padding: 8px;
+    overflow: hidden;
+  }
+  .bottom .botTop{
+    width: 100%;
+    height: 65%;
+  }
+  .bottom .botBot{
+    width: 100%;
+    padding-top: 5px;
+    border-top: 1px solid rgba(51, 51, 51, 0.226);
+    height: 35%;
+  }
+  .motaL, .motaR{
+    width: 30%;
+    height: 80%;
+    float: left;
+  }
+  .motaR{
+    width: 42%;
+  }
+  .motaL ul li h4{
+    font-size: 18px;
+  
+  }
+  .motaL ul li{
+    font-size: 14px;
+  }
+  .mota{
+    padding-top: 20px;
+    font-size: 14px;
+  }
+  .bottom .botTop .bt1,.bt2,.bt3,.bt4{
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+   line-height: 35px;
+    float: left;
+    margin-right: 10%;
+  }
+  
+  .bt1 .bttren{
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+  }
+  .bt1 .btduoi{
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    z-index: 3;
+    border-top: 1px solid rgba(51, 51, 51, 0.582);
+  }
+ @media(min-width: 389px) and (max-width: 819px) {
+   .con{
+    overflow: hidden;
+    display: block;
+    padding-top: 0;
+   }
+   .lt{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .rt{
+    width: 110%;
+    height: 100%;
+  }
+  .newsMin{
+    height: 240px;
+  }
+  .news{
+    height: 200px;
+    line-height: 10px;
+  }
+  .news p{
+    font-size: 10px;
+  }
+  .ct{
+    height: 460px;
+  }
+  .news h3{
+    font-size: 11px;
+  }
+  .productLeft{
+    width: 90%;
+    transform: translateX(5%) translateY(-26%);
+  }
+  .productRight{
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .products{
+    width: 100% !important;
+  }
+  .chude{
+    top: 2660px !important;
+  }
+  .chude a{
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .vid{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .ptd{
+    top: 60px ;
+  }
+  .pMin h5,p{
+    font-size: 11px;
+  }
+  .p3{
+    top: 300px;
+  }
+  .p3 p,h4{
+    font-size: 10px;
+  }
+  .bt1, .bt2, .bt3, .bt4{
+    width: 25%;
+    margin-right: 0%;
+  }.bottom ul li{
+    font-size: 10px;
+    line-height: 10px;
+  }
+ }
+ 
+
+@media(min-width: 820px) and (max-width: 1180px) {
+ .time{
+   margin: 6px 0% 5px 5px;
+   transform: translateY(10px) translateX(-5px);
+ }
+ .productRight{
+   width: 90% !important;
+   
+   transform: translateX(3%);
+ }
+ .chude{
+   transform: translateY(-280px) translateX(16px);
+   width: 78% !important;
+ }
+ .productLeft{
+   width: 0%;
+   height: 0%;
+   opacity: 0;
+   visibility: hidden;
+ }
+ input{
+   opacity: 0;
+   visibility: hidden;
+ }
+ .btn.btn-outline{
+   position: relative;
+   left:580px;
+   top: -40px
+ }
+ .menu{
+   width: 100%;
+   overflow: hidden ;
+   height: 560px;
+ }
+ .newsMin{
+   height: 240px;
+ }
+ .lt{
+   opacity: 0;
+   visibility: hidden;
+ }
+ .rt{
+   width: 110%;
+ }
 }
